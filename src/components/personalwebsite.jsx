@@ -94,6 +94,8 @@ const SKILLS = [
   "Firebase", "GitHub",
 ];
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/aribah-aizaz-b55046204/";
+
 // ── HOOKS ─────────────────────────────────────────────────────────────────────
 function useInView(threshold = 0.12) {
   const ref = useRef(null);
@@ -179,13 +181,13 @@ export default function PersonalWebsite() {
   const [activeSection, setActiveSection] = useState("hero");
   const mousePosRef = useRef({ x: 0, y: 0 });
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    window.scrollTo(0, 0);
   
     const onScroll = () => setScrollY(window.scrollY);
     let ticking = false;
@@ -237,10 +239,6 @@ export default function PersonalWebsite() {
 
     .skill-chip { font-family:'Syne',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(148,163,184,0.9); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:6px 16px; background:rgba(255,255,255,0.03); transition:all 0.2s; }
     .skill-chip:hover { border-color:rgba(167,139,250,0.4); color:#c4b5fd; background:rgba(167,139,250,0.06); }
-
-    .input-field { width:100%; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:14px 18px; font-family:'Syne',sans-serif; font-size:14px; color:#e2e8f0; outline:none; transition:border-color 0.2s, background 0.2s; }
-    .input-field:focus { border-color:rgba(167,139,250,0.5); background:rgba(167,139,250,0.04); }
-    .input-field::placeholder { color:rgba(148,163,184,0.4); }
 
     .send-btn { background:linear-gradient(135deg, rgba(167,139,250,0.15), rgba(103,232,249,0.1)); border:1px solid rgba(167,139,250,0.35); border-radius:40px; padding:15px 40px; color:#c4b5fd; font-family:'Syne',sans-serif; font-size:14px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
     .send-btn:hover { background:linear-gradient(135deg, rgba(167,139,250,0.28), rgba(103,232,249,0.18)); border-color:rgba(167,139,250,0.6); color:#ede9fe; transform:translateY(-2px); }
@@ -490,30 +488,32 @@ export default function PersonalWebsite() {
                 Let's{" "}
                 <span style={{ fontFamily: "'Libre Baskerville', serif", fontStyle: "italic", fontWeight: 400, color: "rgba(167,139,250,0.85)" }}>connect</span>
               </h2>
-              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 16, color: "rgba(148,163,184,0.7)", marginBottom: 48, lineHeight: 1.7 }}>
-                Whether it's a research collab, a project, or just a hello — I'd love to hear from you. You can also reach me at{" "}
-                <a href="mailto:aaribah0709@kaist.ac.kr" style={{ color: "rgba(167,139,250,0.8)", textDecoration: "none" }}>aaribah0709@kaist.ac.kr</a>.
+              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 16, color: "rgba(148,163,184,0.7)", marginBottom: 32, lineHeight: 1.7 }}>
+                Whether it's a research collab, a project, or just a hello — I'd love to hear from you.
               </p>
             </Reveal>
 
-            {sent ? (
-              <Reveal>
-                <div style={{ background: "rgba(167,139,250,0.07)", border: "1px solid rgba(167,139,250,0.2)", borderRadius: 16, padding: "40px", textAlign: "center" }}>
-                  <ChromeStar size={40} style={{ margin: "0 auto 16px", display: "block" }} />
-                  <p style={{ fontFamily: "'Libre Baskerville', serif", fontSize: "1.1rem", fontStyle: "italic", color: "rgba(196,181,253,0.9)" }}>Message received. Talk soon.</p>
-                </div>
-              </Reveal>
-            ) : (
-              <Reveal delay={0.1}>
-                <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                  {[{ id: "name", placeholder: "Your name", type: "text" }, { id: "email", placeholder: "Email address", type: "email" }].map(({ id, placeholder, type }) => (
-                    <input key={id} className="input-field" type={type} placeholder={placeholder} value={form[id]} onChange={e => setForm(p => ({ ...p, [id]: e.target.value }))} />
-                  ))}
-                  <textarea className="input-field" rows={5} placeholder="Your message" value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} style={{ resize: "vertical" }} />
-                  <div><button className="send-btn" onClick={() => setSent(true)}>Send message</button></div>
-                </div>
-              </Reveal>
-            )}
+            <Reveal delay={0.1}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "flex-start" }}>
+                <a
+                  href="mailto:aaribah0709@gmail.com"
+                  className="send-btn"
+                  style={{ textDecoration: "none" }}
+                >
+                  Email me →
+                </a>
+              
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="send-btn"
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 13, textDecoration: "none" }}
+                >
+                  Connect on LinkedIn →
+                </a>
+              </div>
+            </Reveal>
           </div>
         </section>
 

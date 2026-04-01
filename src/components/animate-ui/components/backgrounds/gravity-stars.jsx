@@ -99,6 +99,19 @@ function GravityStarsBackground({
     mouseRef.current = { x: clientX - rect.left, y: clientY - rect.top };
   }, []);
 
+  React.useEffect(() => {
+    const onWindowMouseMove = (e) => handlePointerMove(e);
+    const onWindowTouchMove = (e) => handlePointerMove(e);
+
+    window.addEventListener('mousemove', onWindowMouseMove, { passive: true });
+    window.addEventListener('touchmove', onWindowTouchMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('mousemove', onWindowMouseMove);
+      window.removeEventListener('touchmove', onWindowTouchMove);
+    };
+  }, [handlePointerMove]);
+
   const updateStars = React.useCallback(() => {
     const w = canvasSize.width;
     const h = canvasSize.height;
