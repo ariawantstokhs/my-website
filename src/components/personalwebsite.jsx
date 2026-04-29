@@ -43,6 +43,15 @@ const RESEARCH = [
 const PROJECTS = [
   {
     id: "01",
+    title: "Yarns & Loops",
+    period: "April 2026 – present",
+    description: "A full-stack AI operations dashboard for a crochet business with multi-agent workflows for production scheduling, inventory replenishment, and customer-reply drafting, with real-time progress streaming and human-in-the-loop approvals.",
+    tags: ["React + Vite", "Node/Express", "Supabase", "OpenAI"],
+    href: "https://github.com/ariawantstokhs/crochet-dash.git",
+    glow: "#a78bfa",
+  },
+  {
+    id: "02",
     title: "AIntegrate",
     period: "Mar 2025 – Jun 2025",
     description: "Platform using LLMs and a research paper dataset to help beginner entrepreneurs find AI optimization strategies for their businesses. Pitched with a YC-template deck.",
@@ -51,7 +60,7 @@ const PROJECTS = [
     glow: "#a78bfa",
   },
   {
-    id: "02",
+    id: "03",
     title: "YumYums",
     period: "Mar 2024 – Jun 2024",
     description: "Kiosk interface designed for people with dietary restrictions — allergy checks, personalized suggestions from past customer data, and haptic-button menu customization.",
@@ -60,7 +69,7 @@ const PROJECTS = [
     glow: "#67e8f9",
   },
   {
-    id: "03",
+    id: "04",
     title: "Pandora's Box Discord Bot",
     period: "Sep 2024 – Dec 2024",
     description: "Discord bot using the OpenAI API to mediate workplace and lab communication. Generated emotion 2D maps with Matplotlib and preserved member anonymity through prompt engineering.",
@@ -69,7 +78,7 @@ const PROJECTS = [
     glow: "#f0abfc",
   },
   {
-    id: "04",
+    id: "05",
     title: "The Sentient Coffee Mug",
     period: "Sep 2024 – Dec 2024",
     description: "Gave a coffee mug sentient thoughts by feeding live sensor data into the OpenAI API. Prompt engineered a distinct personality. Yes, really.",
@@ -78,7 +87,7 @@ const PROJECTS = [
     glow: "#fcd34d",
   },
   {
-    id: "05",
+    id: "06",
     title: "Signature Forgery Detection",
     period: "Sep 2023 – Dec 2023",
     description: "Implemented and compared CNN and Siamese networks for signature forgery detection on a standardized image dataset, analyzing trade-offs in accuracy and generalization.",
