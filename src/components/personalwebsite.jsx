@@ -20,9 +20,9 @@ const RESEARCH = [
     id: "02",
     title: "TransLucent",
     lab: "Civic A.I. Lab",
-    period: "Dec 2025 – present",
-    description: "Researching gaps in existing translation tools via formative studies and interviews. Designing a tool that adapts its interface based on the user's language proficiency level.",
-    badge: "Ongoing",
+    period: "Dec 2025 – Aug 2026",
+    description: "Researched gaps in existing translation tools via a formative study and interviews. Designed and developed a prototype tool that adapts its interface based on the user's language proficiency level.",
+    badge: null,
     tags: ["HCI", "NLP", "Interface Design"],
     href: "https://github.com/ariawantstokhs/kor-trans-tool/tree/main",
     glow: "#67e8f9",
@@ -44,10 +44,10 @@ const PROJECTS = [
   {
     id: "01",
     title: "Yarns & Loops",
-    period: "April 2026 – present",
-    description: "A full-stack AI operations dashboard for a crochet business with multi-agent workflows for production scheduling, inventory replenishment, and customer-reply drafting, with real-time progress streaming and human-in-the-loop approvals.",
+    period: "2026",
+    description: "Personal project: a full-stack AI operations dashboard for a crochet business with multi-agent workflows for production scheduling, inventory replenishment, and customer-reply drafting, with real-time progress streaming and human-in-the-loop approvals.",
     tags: ["React + Vite", "Node/Express", "Supabase", "OpenAI"],
-    href: "https://github.com/ariawantstokhs/crochet-dash.git",
+    href: "https://github.com/ariawantstokhs/crochet-dash",
     glow: "#a78bfa",
   },
   {
@@ -396,8 +396,8 @@ export default function PersonalWebsite() {
                   <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 16, padding: "24px 28px", display: "flex", alignItems: "center", gap: 20 }}>
                     <ChromeStar size={36} rotate={5} style={{ flexShrink: 0 }} />
                     <div>
-                      <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 13, fontWeight: 700, color: "#e2e8f0", marginBottom: 4 }}>Open to opportunities</p>
-                      <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 12, color: "rgba(148,163,184,0.6)" }}>Research, design, or dev — let's build something together.</p>
+                      <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 13, fontWeight: 700, color: "#e2e8f0", marginBottom: 4 }}>AI Researcher at Gemmy Studio</p>
+                      <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 12, color: "rgba(148,163,184,0.6)" }}>Since June 2026 — QA for DAIOps AI agents, frontend for an internal Claude-based workflow tool, and ML surrogate modelling.</p>
                     </div>
                   </div>
                 </Reveal>
